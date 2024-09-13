@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop watch</title>
+    <style>
+          *{
+            box-sizing: border-box;
+            line-break:auto;
+          }
+          body{
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+          }
+          .Header{
+            background-color: aqua;
+            max-width: fit-content;
+            justify-content: space-around;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 34px;
+
+          }
+          button{
+            padding: 10px 20px;
+            margin-top: 20px;
+            display: inline-flex;
+            border: none;
+            cursor: pointer;
+          }
+          #start{
+            background-color: rgba(0, 255, 0, 0.786);
+            border-radius: 20px;
+
+          }
+          #stop{
+            background-color: red;
+            border-radius: 20px;
+          }
+          #reset{
+            background-color: yellow;
+            border-radius: 20px;
+          }
+    </style>
+ <script src="script.js"></script>
+</head>
+<body>
+     <div class="Header">
+          <h1>Stop Watch</h1>
+          <div class="time">
+              <span class="digit" id="hr">00</span>
+              <span class="txt">HR :</span>
+              <span class="digit" id="min">00</span>
+              <span class="txt">MIN :</span>
+              <span class="digit" id="sec">00</span>
+              <span class="txt">SEC :</span>
+              <span class="digit" id="count">00</span>
+              <!-- <span class="txt">MSEC</span> -->
+          </div>
+          <div>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+          </div>
+     </div>
+</body>
+</html>
