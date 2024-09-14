@@ -2,14 +2,15 @@ let startBtn = document.getElementById('start');
 let stopBtn = document.getElementById('stop');
 let resetBtn = document.getElementById('reset');
 
-// let hour = 00;
-// let minute = 00;
-// let second = 00;
-// let count = 00;
+let hour = '0';
+let minute = '0';
+let second = '0';
+let count = '0';
 
 startBtn.addEventListener('click', function () {
     timer = true;
     stopWatch();
+    
 });
 
 stopBtn.addEventListener('click', function () {
@@ -28,6 +29,49 @@ resetBtn.addEventListener('click', function () {
     document.getElementById('count').innerHTML = "00";
 });
 
+function stopWatch(){
+    if(timer){
+        count++;
+       if(count ==90){
+         second++;
+         count =0;
+       }
+
+       if(second==60){
+         minute++;
+         second =0;
+       }
+
+        if(minute == 60){
+            hour++;
+            minute=0;
+            second =0;
+        }
+
+        let hrstring = hour;
+        let minstring = minute;
+        let secstring = second;
+        let countstring = count;
+        if(hour<10){
+            hrstring = "0"+hrstring;
+        }
+        if(minute<10){
+            minstring = "0"+minstring;
+        }
+        if(second<10){
+            secstring = "0"+secstring;
+        }
+        if(count<10){
+            countstring = "0"+countstring;
+        }
+
+        document.getElementById('hr').innerHTML=hrstring;
+        document.getElementById('min').innerHTML=minstring;
+        document.getElementById('sec').innerHTML=secstring;
+        document.getElementById('count').innerHTML=countstring;
+        setTimeout(stopWatch,10);
+    }
+}
 
 
 
