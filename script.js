@@ -10,11 +10,11 @@ let count = '0';
 startBtn.addEventListener('click', function () {
     timer = true;
     stopWatch();
-    
 });
 
 stopBtn.addEventListener('click', function () {
     timer = false;
+    lap();
 });
 
 resetBtn.addEventListener('click', function () {
@@ -27,6 +27,8 @@ resetBtn.addEventListener('click', function () {
     document.getElementById('min').innerHTML = "00";
     document.getElementById('sec').innerHTML = "00";
     document.getElementById('count').innerHTML = "00";
+    document.getElementById('lap').innerHTML = " ";
+    i =1;
 });
 
 function stopWatch(){
@@ -52,6 +54,7 @@ function stopWatch(){
         let minstring = minute;
         let secstring = second;
         let countstring = count;
+
         if(hour<10){
             hrstring = "0"+hrstring;
         }
@@ -73,6 +76,23 @@ function stopWatch(){
     }
 }
 
+let i =1;
+function lap() {
+        let hrstring = hour;
+        let minstring = minute;
+        let secstring = second;
+        let countstring = count;
+
+    let lapnow = hrstring + " : " + minstring + " : " + secstring + " : " + countstring;
+    var lapname = "Lap" + i;
+    i++;
+         
+    let lapEntry = document.createElement('p');
+    lapEntry.innerText =lapname +" : "+ lapnow;
+   
+    
+    document.getElementById('lap').appendChild(lapEntry);
+}
 
 
 
